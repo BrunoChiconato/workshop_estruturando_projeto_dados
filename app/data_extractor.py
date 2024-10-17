@@ -90,7 +90,7 @@ class DataExtractor:
         if len(json_files) != 1:
             raise FileNotFoundError(f"Esperado exatamente um arquivo JSON no diretório '{input_path}', mas encontrou {len(json_files)}.")
         
-        return pd.read_json(json_files[0])
+        return pd.read_json(json_files[0], lines=True)
     
     def read_parquet_data(self, input_path: str) -> pd.DataFrame:
         """
