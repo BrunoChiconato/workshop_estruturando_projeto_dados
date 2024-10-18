@@ -9,19 +9,19 @@ def transform_data(data: pd.DataFrame) -> pd.DataFrame:
     'price' para cada método de pagamento. Retorna um novo DataFrame com duas colunas: 
     'payment_method' e 'price', onde 'price' representa a soma total para cada método de pagamento.
 
-    Parâmetros:
+    Parameters:
     ----------
     data : pd.DataFrame
         DataFrame de entrada que deve conter as colunas 'payment_method' e 'price'.
 
-    Retorna:
+    Returns:
     -------
     pd.DataFrame
         DataFrame transformado com as colunas:
         - 'payment_method': Métodos de pagamento únicos.
         - 'price': Soma dos preços correspondentes a cada método de pagamento.
 
-    Erros:
+    Errors:
     ------
     KeyError
         Se a coluna 'payment_method' ou 'price' não estiver presente no DataFrame.
