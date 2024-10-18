@@ -32,8 +32,3 @@ def extract_and_consolidate(data_path: str):
 
     consolidate_data: pd.DataFrame = pd.concat([csv_data, json_data, parquet_data], ignore_index=True)
     return consolidate_data
-
-if __name__ == '__main__':
-    input_path = './data/raw/'
-    print(extract_and_consolidate(input_path))
-
