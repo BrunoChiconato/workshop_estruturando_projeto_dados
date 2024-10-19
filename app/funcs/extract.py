@@ -1,7 +1,8 @@
 import pandas as pd # type: ignore
 from classes.data_extractor import DataExtractor
-from decorators.log_decorator import log_decorator
+from decorators.decorators import log_decorator, time_decorador
 
+@time_decorador
 @log_decorator
 def extract_and_consolidate(data_path: str):
     """

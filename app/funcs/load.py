@@ -1,7 +1,8 @@
 import pandas as pd # type: ignore
 import os
-from decorators.log_decorator import log_decorator
+from decorators.decorators import log_decorator, time_decorador
 
+@time_decorador
 @log_decorator
 def load_data(data: pd.DataFrame, output_path: str, output_name: str) -> None:
     """

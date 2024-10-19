@@ -51,5 +51,5 @@ def generate_data(path) -> None:
     print('Arquivos criados com sucesso!')
 
 if __name__ == '__main__':
-    output_path: str = './data/raw/'
+    output_path: str = '../data/raw/'
     generate_data(output_path)

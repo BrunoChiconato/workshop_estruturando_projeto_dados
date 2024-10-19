@@ -2,8 +2,9 @@ import pandas as pd # type: ignore
 from funcs.extract import extract_and_consolidate
 from funcs.transform import transform_data
 from funcs.load import load_data
-from decorators.log_decorator import log_decorator
+from decorators.decorators import log_decorator, time_decorador
 
+@time_decorador
 @log_decorator
 def main():
     input_path: str = '../data/raw'

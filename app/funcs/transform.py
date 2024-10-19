@@ -1,6 +1,7 @@
 import pandas as pd # type: ignore
-from decorators.log_decorator import log_decorator
+from decorators.decorators import log_decorator, time_decorador
 
+@time_decorador
 @log_decorator
 def transform_data(data: pd.DataFrame) -> pd.DataFrame:
     """
