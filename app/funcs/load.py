@@ -1,6 +1,8 @@
 import pandas as pd # type: ignore
 import os
+from decorators.log_decorator import log_decorator
 
+@log_decorator
 def load_data(data: pd.DataFrame, output_path: str, output_name: str) -> None:
     """
     Salva um DataFrame em um arquivo CSV no caminho especificado.

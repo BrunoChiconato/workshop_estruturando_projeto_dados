@@ -1,6 +1,8 @@
 import pandas as pd # type: ignore
-from data_extractor import DataExtractor
+from classes.data_extractor import DataExtractor
+from decorators.log_decorator import log_decorator
 
+@log_decorator
 def extract_and_consolidate(data_path: str):
     """
     Extrai e consolida dados de arquivos CSV, JSON e Parquet em um único DataFrame.

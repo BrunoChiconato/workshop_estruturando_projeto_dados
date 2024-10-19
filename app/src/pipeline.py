@@ -1,11 +1,13 @@
 import pandas as pd # type: ignore
-from extract import extract_and_consolidate
-from transform import transform_data
-from load import load_data
+from funcs.extract import extract_and_consolidate
+from funcs.transform import transform_data
+from funcs.load import load_data
+from decorators.log_decorator import log_decorator
 
+@log_decorator
 def main():
-    input_path: str = './data/raw'
-    output_path: str = './data/processed'
+    input_path: str = '../data/raw'
+    output_path: str = '../data/processed'
     output_name: str = 'vendas_processadas.csv'
 
     data: pd.DataFrame = extract_and_consolidate(input_path)

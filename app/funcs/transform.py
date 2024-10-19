@@ -1,5 +1,7 @@
 import pandas as pd # type: ignore
+from decorators.log_decorator import log_decorator
 
+@log_decorator
 def transform_data(data: pd.DataFrame) -> pd.DataFrame:
     """
     Transforma um DataFrame agrupando os valores de 'price' por 'payment_method'.
