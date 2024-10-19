@@ -18,10 +18,10 @@
     ```
 5. Para gerar os arquivos que serão utilizados na pipeline, execute o seguinte comando:
     ```bash
-    python generate_data.py
+    python funcs/generate_data.py
     ```
 
 6. Agora, você estará pronto para executar o código principal presente em `pipeline.py` utilizando o comando:
     ```bash
-    python pipeline.py
+    python -m src.pipeline
     ```
