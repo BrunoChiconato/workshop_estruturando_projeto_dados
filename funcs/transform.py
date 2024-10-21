@@ -43,6 +43,12 @@ def transform_data(data: pd.DataFrame) -> pd.DataFrame:
         if 'price' not in columns:
             raise KeyError("A coluna 'price' não foi encontrada.")
         
+        data['price'] = pd.to_numeric(data['price'], errors='coerce')
+        
+        if data['price'].isna().all():
+            print('Erro: Todos os valores de "price" são inválidos. Tente novamente.')
+            return transform_data
+        
         transform_data = data.groupby('payment_method')['price'].sum().reset_index()
         transform_data.columns = ['payment_method', 'price']
 
