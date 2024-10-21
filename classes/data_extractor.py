@@ -62,7 +62,7 @@ class DataExtractor:
         if len(csv_files) != 1:
             raise FileNotFoundError(f"Esperado exatamente um arquivo CSV no diretório '{input_path}', mas encontrou {len(csv_files)}.")
         
-        return pd.read_csv(csv_files[0])
+        return pd.read_csv(csv_files[0], encoding='utf-8')
 
     def read_json_data(self, input_path: str) -> pd.DataFrame:
         """
@@ -90,7 +90,7 @@ class DataExtractor:
         if len(json_files) != 1:
             raise FileNotFoundError(f"Esperado exatamente um arquivo JSON no diretório '{input_path}', mas encontrou {len(json_files)}.")
         
-        return pd.read_json(json_files[0], lines=True)
+        return pd.read_json(json_files[0], lines=True, encoding='utf-8')
     
     def read_parquet_data(self, input_path: str) -> pd.DataFrame:
         """
