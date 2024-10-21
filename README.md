@@ -6,17 +6,17 @@ Este repositório tem como objetivo implementar um exemplo de um problema comum 
 1. Git e GitHub;
 2. `Pyenv` e `Poetry` para gestão de ambiente e dependências;
 3. Modularização do código;
-4. Testes unitários com `pytest`.
+4. Utilização de funções, classes e decoradores;
+5. Testes unitários com `pytest`;
+6. Banco de dados PostgreSQL hospedado no Render;
+7. `SQLAlchemy` para gravar o DataFrame consolidado no banco em nuvem.
 
 ### Próximas Implementações:
 1. Finalizar os testes unitários;
-2. Configurar um banco de dados no `Render`;
-3. Utilizar a biblioteca `SQLAlchemy` para gravar os dados em um banco de dados na nuvem;
-4. Atualizar a função responsável por realizar a carga dos dados no banco de dados;
-5. Implementar validação de **Data Quality** com a biblioteca `pandera`;
-6. Integrar o `taskipy` para automação de tarefas;
-7. Utilizar `isort` e `black` para padronização do código;
-8. Construir uma documentação com `mkdocs` e realizar seu deploy.
+2. Implementar validação de **Data Quality** com a biblioteca `pandera`;
+3. Integrar o `taskipy` para automação de tarefas;
+4. Utilizar `isort` e `black` para padronização do código;
+5. Construir uma documentação com `mkdocs` e realizar seu deploy.
 
 ## Estrutura do Projeto
 A estrutura atual do projeto é a seguinte:
@@ -80,5 +80,5 @@ workshop_estruturando_projeto_dados
 
 6. Agora, você estará pronto para executar o código principal presente em `pipeline.py` utilizando o comando:
     ```bash
-    python -m src.pipeline
+    python -m app.pipeline
     ```
