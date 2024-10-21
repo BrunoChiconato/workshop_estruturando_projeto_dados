@@ -11,8 +11,13 @@ pandas = "^2.2.3"
 numpy = "^2.1.2"
 fastparquet = "^2024.5.0"
 loguru = "^0.7.2"
+pytest = "^8.3.3"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+

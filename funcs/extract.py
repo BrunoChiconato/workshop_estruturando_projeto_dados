@@ -4,7 +4,7 @@ from decorators.decorators import log_decorator, time_decorador
 
 @time_decorador
 @log_decorator
-def extract_and_consolidate(data_path: str):
+def extract_and_consolidate(data_path: str) -> pd.DataFrame:
     """
     Extrai e consolida dados de arquivos CSV, JSON e Parquet em um único DataFrame.
 

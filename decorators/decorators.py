@@ -4,7 +4,7 @@ from functools import wraps
 
 logger.remove()
 
-logger.add('../app.log', colorize=True, format="{time:DD/MM/YYYY HH:mm:ss} {message} {level}", level="INFO")
+logger.add('./app.log', colorize=True, format="{time:DD/MM/YYYY HH:mm:ss} {message} {level}", level="INFO")
 
 def log_decorator(func):
     """

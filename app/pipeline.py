@@ -7,8 +7,8 @@ from decorators.decorators import log_decorator, time_decorador
 @time_decorador
 @log_decorator
 def main():
-    input_path: str = '../data/raw'
-    output_path: str = '../data/processed'
+    input_path: str = './data/raw'
+    output_path: str = './data/processed'
     output_name: str = 'vendas_processadas.csv'
 
     data: pd.DataFrame = extract_and_consolidate(input_path)
