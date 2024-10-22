@@ -1,8 +1,11 @@
-import pytest # type: ignore
-import pandas as pd # type: ignore
-from unittest.mock import patch, MagicMock
-from sqlalchemy.exc import SQLAlchemyError # type: ignore
+from unittest.mock import MagicMock, patch
+
+import pandas as pd  # type: ignore
+import pytest  # type: ignore
+from sqlalchemy.exc import SQLAlchemyError  # type: ignore
+
 from funcs.load import load_data
+
 
 @patch("funcs.load.create_engine")
 @patch("funcs.load.quote_plus")

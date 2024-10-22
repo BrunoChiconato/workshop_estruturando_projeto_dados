@@ -1,6 +1,7 @@
-import pandas as pd # type: ignore
-import numpy as np # type: ignore
 import os
+
+import numpy as np  # type: ignore
+import pandas as pd  # type: ignore
 
 np.random.seed(42)
 

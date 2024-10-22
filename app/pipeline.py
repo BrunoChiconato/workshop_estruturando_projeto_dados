@@ -1,8 +1,10 @@
-import pandas as pd # type: ignore
-from funcs.extract import extract_and_consolidate
-from funcs.transform import transform_data
-from funcs.load import load_data
+import pandas as pd  # type: ignore
+
 from decorators.decorators import log_decorator, time_decorador
+from funcs.extract import extract_and_consolidate
+from funcs.load import load_data
+from funcs.transform import transform_data
+
 
 @time_decorador
 @log_decorator

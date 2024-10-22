@@ -1,7 +1,10 @@
-import pytest  # type: ignore
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
+
 import pandas as pd  # type: ignore
+import pytest  # type: ignore
+
 from funcs.extract import extract_and_consolidate  # type: ignore
+
 
 @patch('funcs.extract.DataExtractor')
 def test_extract_and_consolidate(MockDataExtractor):

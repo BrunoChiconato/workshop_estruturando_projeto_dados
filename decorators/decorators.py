@@ -1,6 +1,7 @@
 import time
-from loguru import logger # type: ignore
 from functools import wraps
+
+from loguru import logger  # type: ignore
 
 logger.remove()
 

@@ -16,6 +16,8 @@ python-dotenv = "^1.0.1"
 sqlalchemy = "^2.0.36"
 psycopg2-binary = "^2.9.10"
 psycopg2 = "^2.9.10"
+isort = "^5.13.2"
+black = "^24.10.0"
 
 
 [build-system]

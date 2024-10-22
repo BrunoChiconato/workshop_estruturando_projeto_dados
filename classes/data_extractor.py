@@ -1,6 +1,8 @@
-import pandas as pd # type: ignore
-import os
 import glob
+import os
+
+import pandas as pd  # type: ignore
+
 
 class DataExtractor:
     """

@@ -1,6 +1,8 @@
-import pytest  # type: ignore
 import pandas as pd  # type: ignore
+import pytest  # type: ignore
+
 from funcs.transform import transform_data
+
 
 def test_transform_data_success():
     """

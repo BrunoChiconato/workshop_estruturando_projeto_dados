@@ -1,10 +1,12 @@
-import pandas as pd # type: ignore
 import os
 from urllib.parse import quote_plus
-from dotenv import load_dotenv # type: ignore
+
+import pandas as pd  # type: ignore
+from dotenv import load_dotenv  # type: ignore
+from loguru import logger  # type: ignore
+from sqlalchemy import create_engine, text  # type: ignore
+
 from decorators.decorators import log_decorator, time_decorador
-from sqlalchemy import create_engine, text # type: ignore
-from loguru import logger # type: ignore
 
 load_dotenv()
 

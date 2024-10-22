@@ -1,6 +1,8 @@
-import pandas as pd # type: ignore
+import pandas as pd  # type: ignore
+
 from classes.data_extractor import DataExtractor
 from decorators.decorators import log_decorator, time_decorador
+
 
 @time_decorador
 @log_decorator

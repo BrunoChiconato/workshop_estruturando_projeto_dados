@@ -1,5 +1,7 @@
-import pandas as pd # type: ignore
+import pandas as pd  # type: ignore
+
 from decorators.decorators import log_decorator, time_decorador
+
 
 @time_decorador
 @log_decorator
