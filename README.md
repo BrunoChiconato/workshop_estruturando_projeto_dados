@@ -9,14 +9,13 @@ Este repositório tem como objetivo implementar um exemplo de um problema comum 
 4. Utilização de funções, classes e decoradores;
 5. Testes unitários com `pytest`;
 6. Banco de dados PostgreSQL hospedado no Render;
-7. `SQLAlchemy` para gravar o DataFrame consolidado no banco em nuvem.
+7. Utilização da biblioteca `SQLAlchemy` para gravar o DataFrame consolidado no banco em nuvem;
+8. Utilização das bibliotecas `isort` e `black` para padronização do código.
 
 ### Próximas Implementações:
-1. Finalizar os testes unitários;
-2. Implementar validação de **Data Quality** com a biblioteca `pandera`;
-3. Integrar o `taskipy` para automação de tarefas;
-4. Utilizar `isort` e `black` para padronização do código;
-5. Construir uma documentação com `mkdocs` e realizar seu deploy.
+1. Implementar validação de **Data Quality** com a biblioteca `pandera`;
+2. Integrar o `taskipy` para automação de tarefas;
+3. Construir uma documentação com `mkdocs` e realizar seu deploy.
 
 ## Estrutura do Projeto
 A estrutura atual do projeto é a seguinte:
