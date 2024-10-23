@@ -10,12 +10,10 @@ from funcs.transform import transform_data
 @log_decorator
 def main():
     input_path: str = './data/raw'
-    output_path: str = './data/processed'
-    output_name: str = 'vendas_processadas.csv'
 
     data: pd.DataFrame = extract_and_consolidate(input_path)
     transformed_data: pd.DataFrame = transform_data(data)
-    load_data(transformed_data, output_path, output_name)
+    load_data(transformed_data)
 
 if __name__ == '__main__':
     main()
