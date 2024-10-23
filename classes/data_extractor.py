@@ -1,9 +1,9 @@
 import glob
 import os
-import pandera as pa # type: ignore
-from loguru import logger # type: ignore
 
 import pandas as pd  # type: ignore
+import pandera as pa  # type: ignore
+from loguru import logger  # type: ignore
 
 
 class DataExtractor:
