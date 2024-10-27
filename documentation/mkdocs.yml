@@ -1,0 +1,10 @@
+site_name: My Docs
+theme:
+  name: material
+  palette:
+    primary: red
+    accent: red
+  language: pt
+
+repo_name: "BrunoChiconato/estrutura_dados"
+repo_url: "https://github.com/BrunoChiconato/workshop_estruturando_projeto_dados"
