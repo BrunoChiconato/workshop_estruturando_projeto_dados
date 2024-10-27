@@ -19,6 +19,8 @@ psycopg2 = "^2.9.10"
 isort = "^5.13.2"
 black = "^24.10.0"
 pandera = "^0.20.4"
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.5.42"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -35,4 +37,5 @@ pythonpath = ["."]
 test = { cmd = "pytest .", help = "runs all unit tests" }
 main = { cmd = "python -m app.pipeline", help = "runs the 'pipeline.py' script" }
 gen_data = { cmd = "python funcs/generate_data.py", help = "runs the 'generate_data.py' script" }
-isort = { cmd = "isort .", help = "runs the isort command in every script on the project"}
+isort = { cmd = "isort .", help = "runs the isort command in every script on the project" }
+kill = { cmd = "kill -9 $(lsof -t -i :8000)", help = "kills all processes running on port 8000" }
