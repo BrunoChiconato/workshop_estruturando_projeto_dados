@@ -35,3 +35,4 @@ pythonpath = ["."]
 test = { cmd = "pytest .", help = "runs all unit tests" }
 main = { cmd = "python -m app.pipeline", help = "runs the 'pipeline.py' script" }
 gen_data = { cmd = "python funcs/generate_data.py", help = "runs the 'generate_data.py' script" }
+isort = { cmd = "isort .", help = "runs the isort command in every script on the project"}

@@ -11,11 +11,11 @@ Este repositório tem como objetivo implementar um exemplo de um problema comum 
 6. Banco de dados PostgreSQL hospedado no Render;
 7. Utilização da biblioteca `SQLAlchemy` para gravar o DataFrame consolidado no banco em nuvem;
 8. Utilização das bibliotecas `isort` e `black` para padronização do código;
-9. Utilização da biblioteca `Pandera` para validação dos schemas dos DataFrames de input.
+9. Utilização da biblioteca `Pandera` para validação dos schemas dos DataFrames de input;
+10. Utilização da biblioteca `taskipy` para automação de tarefas. 
 
 ### Próximas Implementações:
-1. Integrar o `taskipy` para automação de tarefas;
-2. Construir uma documentação com `mkdocs` e realizar seu deploy.
+1. Construir uma documentação com `mkdocs` e realizar seu deploy.
 
 ## Estrutura do Projeto
 A estrutura atual do projeto é a seguinte:
@@ -28,13 +28,11 @@ workshop_estruturando_projeto_dados
 ├── classes
 │   ├── __init__.py              # Permite que o diretório seja tratado como um pacote.
 │   └── data_extractor.py        # Módulo que contém a classe para extração de dados.
-├── data                         # Diretório contendo os dados brutos e processados.
-│   ├── raw
-│   │   ├── dados_vendas.csv
-│   │   ├── dados_vendas.json
-│   │   └── dados_vendas.parquet    
-│   └── processes
-│       └── dados_unificados     # Diretório para armazenar os dados processados e unificados.
+├── data                         # Diretório contendo os dados brutos.
+│   └── raw
+│       ├── dados_vendas.csv
+│       ├── dados_vendas.json
+│       └── dados_vendas.parquet    
 ├── decorators
 │   ├── __init__.py              # Permite que o diretório seja tratado como um pacote.
 │   └── decorators.py            # Módulo que contém os decoradores utilizados.
@@ -47,37 +45,40 @@ workshop_estruturando_projeto_dados
 ├── tests
 │   ├── __init__.py              # Permite que o diretório seja tratado como um pacote.
 │   ├── test_extract.py          # Testes unitários para as funções de extração de dados.
+│   ├── test_load.py             # Testes unitários para as funções de carga de dados.
 │   └── test_transform.py        # Testes unitários para as funções de transformação de dados.
 ├── .gitignore                   # Arquivo para especificar quais arquivos devem ser ignorados pelo Git.
 ├── .python-version              # Arquivo que define a versão do Python usada no projeto.
 ├── poetry.lock                  # Arquivo de bloqueio gerado pelo Poetry, com as versões exatas das dependências.
 ├── pyproject.toml               # Arquivo de configuração do Poetry, especificando dependências e configurações do projeto.
-├── README.md                    # Arquivo de documentação do projeto.
+└── README.md                    # Arquivo de documentação do projeto.
 ```
 
 ## Como executar esse projeto?
-1. **Clone este repositório** utilizando o seguinte comando:
+
+1. Clone este repositório utilizando o seguinte comando:
     ```bash
     git clone git@github.com:BrunoChiconato/workshop_estruturando_projeto_dados.git
     ```
    
-2. **Certifique-se de que o Pyenv está instalado** em sua máquina. A versão do Python será automaticamente ajustada para 3.12.5 ao navegar para o diretório do projeto, pois o arquivo `.python-version` já está definido.
+2. Certifique-se de que o `pyenv` está instalado em sua máquina. A versão do Python será automaticamente ajustada para 3.12.5 ao navegar para o diretório do projeto, pois o arquivo `.python-version` já está definido.
 
-3. **Instale o Poetry** e todas as dependências do projeto utilizando o comando:
+3. Instale o `poetry` e todas as dependências do projeto utilizando o comando:
     ```bash
     poetry install
     ```
 
-4. A partir deste momento, você poderá executar os códigos presentes na pasta `app`. Navegue até essa pasta utilizando o comando:
+4. Para gerar os arquivos que serão utilizados na pipeline, execute o seguinte comando:
     ```bash
-    cd app
-    ```
-5. Para gerar os arquivos que serão utilizados na pipeline, execute o seguinte comando:
-    ```bash
-    python funcs/generate_data.py
+    poetry run task gen_data
     ```
 
-6. Agora, você estará pronto para executar o código principal presente em `pipeline.py` utilizando o comando:
+5. Agora, você estará pronto para executar o código principal presente em `pipeline.py` utilizando o comando:
     ```bash
-    python -m app.pipeline
+    poetry run task main
+    ```
+
+6. Para saber quais outros comandos você poderá executar dentro desse projeto, execute o seguinte comando:
+    ```bash
+    poetry run task --list
     ```
