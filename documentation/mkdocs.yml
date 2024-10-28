@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Pipeline de Dados de Vendas
 theme:
   name: material
   palette:
@@ -8,3 +8,17 @@ theme:
 
 repo_name: "BrunoChiconato/estrutura_dados"
 repo_url: "https://github.com/BrunoChiconato/workshop_estruturando_projeto_dados"
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: ["../"]  # Adjust path to point to the project root

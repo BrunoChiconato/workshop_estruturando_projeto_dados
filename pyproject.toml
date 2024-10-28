@@ -21,6 +21,9 @@ black = "^24.10.0"
 pandera = "^0.20.4"
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.5.42"
+mkdocstrings-python = "^1.12.2"
+pygments = "^2.18.0"
+pymdown-extensions = "^10.11.2"
 
 
 [tool.poetry.group.dev.dependencies]
