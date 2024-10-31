@@ -2,7 +2,8 @@ site_name: Pipeline de Dados de Vendas
 
 nav:
   - Introdução: index.md
-  - Geração de Dados: generate_data.md
+  - Geração dos Dados: generate_data.md
+  - Extração dos Dados: extract.md
 
 theme:
   name: material
@@ -19,7 +20,9 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-
+  - toc:
+      permalink: false
+      #toc_depth: 3  # Ajuste este valor conforme necessário
 plugins:
   - search
   - mkdocstrings:

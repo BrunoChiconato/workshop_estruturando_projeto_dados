@@ -14,20 +14,14 @@ def extract_and_consolidate(data_path: str) -> pd.DataFrame:
     de arquivos (CSV, JSON e Parquet) presentes em um diretório específico. Após a extração, os
     dados são concatenados em um único DataFrame.
 
-    Parameters:
-    -----------
-    data_path : str
-        Caminho do diretório onde os arquivos CSV, JSON e Parquet estão localizados.
+    Args:
+        data_path (str): Caminho do diretório onde os arquivos CSV, JSON e Parquet estão localizados.
 
     Returns:
-    --------
-    pd.DataFrame
-        DataFrame contendo os dados consolidados de todos os arquivos extraídos.
+        pd.DataFrame: DataFrame contendo os dados consolidados de todos os arquivos extraídos.
 
     Raises:
-    -------
-    FileNotFoundError
-        Se algum dos arquivos CSV, JSON ou Parquet não for encontrado no diretório especificado.
+        FileNotFoundError: Se algum dos arquivos CSV, JSON ou Parquet não for encontrado no diretório especificado.
     """
     extractor = DataExtractor()
 
