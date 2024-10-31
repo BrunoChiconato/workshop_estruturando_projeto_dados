@@ -1,4 +1,9 @@
 site_name: Pipeline de Dados de Vendas
+
+nav:
+  - Introdução: index.md
+  - Geração de Dados: generate_data.md
+
 theme:
   name: material
   palette:
@@ -21,4 +26,6 @@ plugins:
       default_handler: python
       handlers:
         python:
-          paths: ["../"]  # Adjust path to point to the project root
+          paths: [".."]  # Adjust path to point to the project root
+          options:
+            show_root_toc_entry: false

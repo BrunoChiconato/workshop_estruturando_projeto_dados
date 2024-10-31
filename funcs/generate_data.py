@@ -5,7 +5,7 @@ import pandas as pd  # type: ignore
 
 np.random.seed(42)
 
-def generate_data(path) -> None:
+def generate_data(path: str) -> None:
     """
     Gera dados fictícios de vendas e salva em CSV, Parquet e JSON.
 
