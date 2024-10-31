@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../generate_data/">
       
-      
-        <link rel="next" href="../extract/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Geração dos Dados - Pipeline de Dados de Vendas</title>
+        <title>Extração dos Dados - Pipeline de Dados de Vendas</title>
       
     
     
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Geração dos Dados
+              Extração dos Dados
             
           </span>
         </div>
@@ -242,6 +240,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../generate_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geração dos Dados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -256,7 +274,7 @@
           
   
   <span class="md-ellipsis">
-    Geração dos Dados
+    Extração dos Dados
   </span>
   
 
@@ -267,7 +285,7 @@
         
   
   <span class="md-ellipsis">
-    Geração dos Dados
+    Extração dos Dados
   </span>
   
 
@@ -296,9 +314,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#funcao-generate_data" class="md-nav__link">
+  <a href="#funcao-extract_and_consolidate" class="md-nav__link">
     <span class="md-ellipsis">
-      Função generate_data
+      Função extract_and_consolidate
     </span>
   </a>
   
@@ -308,26 +326,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../extract/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Extração dos Dados
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -366,9 +364,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#funcao-generate_data" class="md-nav__link">
+  <a href="#funcao-extract_and_consolidate" class="md-nav__link">
     <span class="md-ellipsis">
-      Função generate_data
+      Função extract_and_consolidate
     </span>
   </a>
   
@@ -392,29 +390,13 @@
   
 
 
-  <h1>Geração dos Dados</h1>
+  <h1>Extração dos Dados</h1>
 
 <h2 id="conteudo">Conteúdo</h2>
-<p>A presente seção inclui um código em Python, localizado em <code>funcs/generate_data.py</code>, que gera dados fictícios de vendas para diversas finalidades. A função principal, <code>generate_data</code>, utiliza as bibliotecas <code>os</code>, <code>pandas</code> e <code>numpy</code> para criar dados simulados e salvá-los em formatos variados, incluindo <code>.csv</code>, <code>.json</code> e <code>.parquet</code>.</p>
-<p>Abaixo está uma descrição detalhada do funcionamento da função <code>generate_data</code>:</p>
-<ol>
-<li>
-<p><strong>Parâmetro de caminho</strong>: A função recebe uma string que especifica o caminho onde os dados gerados serão salvos. Esse caminho pode ser personalizado pelo usuário.</p>
-</li>
-<li>
-<p><strong>Definição do tamanho dos dados</strong>: O número de linhas do conjunto de dados é definido na função. Neste projeto, o valor padrão é <code>n = 1000</code>, mas pode ser ajustado conforme a necessidade.</p>
-</li>
-<li>
-<p><strong>Criação do DataFrame</strong>: Utilizando a biblioteca <code>pandas</code>, a função cria um <strong>DataFrame</strong> e define colunas que representam um relatório de vendas fictício. Para popular essas colunas, são utilizados arrays gerados com a biblioteca <code>numpy</code>, simulando dados como identificadores de vendas, valores, datas e outros detalhes relevantes.</p>
-</li>
-<li>
-<p><strong>Verificação e criação do caminho</strong>: A função verifica se o caminho fornecido existe. Caso o caminho não exista, ele é criado automaticamente para garantir que os arquivos possam ser salvos.</p>
-</li>
-<li>
-<p><strong>Salvamento dos arquivos</strong>: O <strong>DataFrame</strong> gerado é salvo nos três formatos de arquivo especificados (<code>.csv</code>, <code>.json</code> e <code>.parquet</code>). Após o salvamento, uma mensagem de sucesso é exibida, confirmando que os arquivos foram gerados com sucesso.</p>
-</li>
-</ol>
-<h2 id="funcao-generate_data">Função <code>generate_data</code></h2>
+<p>Esta seção descreve o código em Python localizado em <code>funcs/extract.py</code>, que extrai dados de diferentes tipos de arquivos, consolida-os em um <strong>DataFrame</strong> e retorna o <strong>DataFrame</strong> consolidado. Para alcançar esse objetivo, é definida a função <code>extract_and_consolidate</code>.</p>
+<p>A função <code>extract_and_consolidate</code> utiliza a biblioteca <code>pandas</code> para a extração e consolidação dos dados. Ela faz uso da classe <code>DataExtractor</code> (descrita em detalhes na seção <strong>Classes</strong>) e aplica dois decoradores: um para registrar logs e outro para calcular o tempo total de execução da função, ambos explicados na seção <strong>Decoradores</strong> desta documentação.</p>
+<p>A função recebe como parâmetro o caminho do diretório onde os dados de entrada estão armazenados. Em seguida, cria uma instância da classe <code>DataExtractor</code> e utiliza seus métodos para ler dados em diferentes formatos, armazenando cada conjunto de dados em um DataFrame específico. Por fim, a função concatena todos esses DataFrames e retorna o resultado consolidado ao usuário.</p>
+<h2 id="funcao-extract_and_consolidate">Função <code>extract_and_consolidate</code></h2>
 
 
 <div class="doc doc-object doc-function">
@@ -424,21 +406,10 @@
 
     <div class="doc doc-contents first">
 
-        <p>Gera dados fictícios de vendas e salva em CSV, Parquet e JSON.</p>
-<p>Esta função cria um conjunto de dados fictícios com as seguintes colunas:</p>
-<ul>
-<li>order_id (int)</li>
-<li>customer_id (int)</li>
-<li>order_date (date)</li>
-<li>product_id (int)</li>
-<li>quantity (int)</li>
-<li>price (float)</li>
-<li>payment_method (string)</li>
-<li>store_location (string)</li>
-</ul>
-<p>A função verifica se o diretório especificado pelo argumento 'path' existe.
-Caso o diretório não exista, ele será criado. Em seguida, os dados são gerados
-e salvos nos formatos 'csv', 'parquet' e 'json'.</p>
+        <p>Extrai e consolida dados de arquivos CSV, JSON e Parquet em um único DataFrame.</p>
+<p>Esta função cria uma instância da classe DataExtractor para ler dados de diferentes formatos
+de arquivos (CSV, JSON e Parquet) presentes em um diretório específico. Após a extração, os
+dados são concatenados em um único DataFrame.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -454,14 +425,14 @@ e salvos nos formatos 'csv', 'parquet' e 'json'.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>path</code>
+                <code>data_path</code>
             </td>
             <td>
                   <code>str</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Caminho da pasta onde os arquivos serão salvos.</p>
+                <p>Caminho do diretório onde os arquivos CSV, JSON e Parquet estão localizados.</p>
               </div>
             </td>
             <td>
@@ -483,11 +454,34 @@ e salvos nos formatos 'csv', 'parquet' e 'json'.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>None</code>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>None</p>
+                <p>pd.DataFrame: DataFrame contendo os dados consolidados de todos os arquivos extraídos.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>FileNotFoundError</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Se algum dos arquivos CSV, JSON ou Parquet não for encontrado no diretório especificado.</p>
               </div>
             </td>
           </tr>
@@ -495,8 +489,9 @@ e salvos nos formatos 'csv', 'parquet' e 'json'.</p>
     </table>
 
             <details class="quote">
-              <summary>Source code in <code>funcs\generate_data.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+              <summary>Source code in <code>funcs\extract.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 7</span>
+<span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
@@ -521,70 +516,33 @@ e salvos nos formatos 'csv', 'parquet' e 'json'.</p>
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generate_data</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@time_decorador</span>
+<span class="nd">@log_decorator</span>
+<span class="k">def</span> <span class="nf">extract_and_consolidate</span><span class="p">(</span><span class="n">data_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Gera dados fictícios de vendas e salva em CSV, Parquet e JSON.</span>
+<span class="sd">    Extrai e consolida dados de arquivos CSV, JSON e Parquet em um único DataFrame.</span>
 
-<span class="sd">    Esta função cria um conjunto de dados fictícios com as seguintes colunas:</span>
-
-<span class="sd">    - order_id (int)</span>
-<span class="sd">    - customer_id (int)</span>
-<span class="sd">    - order_date (date)</span>
-<span class="sd">    - product_id (int)</span>
-<span class="sd">    - quantity (int)</span>
-<span class="sd">    - price (float)</span>
-<span class="sd">    - payment_method (string)</span>
-<span class="sd">    - store_location (string)</span>
-
-<span class="sd">    A função verifica se o diretório especificado pelo argumento &#39;path&#39; existe.</span>
-<span class="sd">    Caso o diretório não exista, ele será criado. Em seguida, os dados são gerados</span>
-<span class="sd">    e salvos nos formatos &#39;csv&#39;, &#39;parquet&#39; e &#39;json&#39;.</span>
+<span class="sd">    Esta função cria uma instância da classe DataExtractor para ler dados de diferentes formatos</span>
+<span class="sd">    de arquivos (CSV, JSON e Parquet) presentes em um diretório específico. Após a extração, os</span>
+<span class="sd">    dados são concatenados em um único DataFrame.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        path (str): Caminho da pasta onde os arquivos serão salvos.</span>
+<span class="sd">        data_path (str): Caminho do diretório onde os arquivos CSV, JSON e Parquet estão localizados.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        None</span>
+<span class="sd">        pd.DataFrame: DataFrame contendo os dados consolidados de todos os arquivos extraídos.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        FileNotFoundError: Se algum dos arquivos CSV, JSON ou Parquet não for encontrado no diretório especificado.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span>
-    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-        <span class="s1">&#39;order_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
-        <span class="s1">&#39;customer_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">),</span>
-        <span class="s1">&#39;order_date&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">),</span>
-        <span class="s1">&#39;product_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">),</span>
-        <span class="s1">&#39;quantity&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">),</span>
-        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span>
-        <span class="s1">&#39;payment_method&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;Credit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Debit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Cash&#39;</span><span class="p">,</span> <span class="s1">&#39;PayPal&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">),</span>
-        <span class="s1">&#39;store_location&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;Los Angeles&#39;</span><span class="p">,</span> <span class="s1">&#39;Chicago&#39;</span><span class="p">,</span> <span class="s1">&#39;Houston&#39;</span><span class="p">,</span> <span class="s1">&#39;Phoenix&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
-    <span class="p">})</span>
+    <span class="n">extractor</span> <span class="o">=</span> <span class="n">DataExtractor</span><span class="p">()</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">csv_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">extractor</span><span class="o">.</span><span class="n">read_csv_data</span><span class="p">(</span><span class="n">input_path</span> <span class="o">=</span> <span class="n">data_path</span><span class="p">)</span>
+    <span class="n">json_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">extractor</span><span class="o">.</span><span class="n">read_json_data</span><span class="p">(</span><span class="n">input_path</span> <span class="o">=</span> <span class="n">data_path</span><span class="p">)</span>
+    <span class="n">parquet_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">extractor</span><span class="o">.</span><span class="n">read_parquet_data</span><span class="p">(</span><span class="n">input_path</span> <span class="o">=</span> <span class="n">data_path</span><span class="p">)</span>
 
-    <span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;vendas_ficticias.csv&#39;</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">&#39;vendas_ficticias.parquet&#39;</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">&#39;vendas_ficticias.json&#39;</span><span class="p">),</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;records&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Arquivos criados com sucesso!&#39;</span><span class="p">)</span>
+    <span class="n">consolidate_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">csv_data</span><span class="p">,</span> <span class="n">json_data</span><span class="p">,</span> <span class="n">parquet_data</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">consolidate_data</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
