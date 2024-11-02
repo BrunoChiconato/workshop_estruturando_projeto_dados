@@ -22,9 +22,9 @@ def test_extract_and_consolidate(MockDataExtractor):
     - A função `extract_and_consolidate` retorna um DataFrame consolidado com a estrutura e os valores esperados.
     - Cada método de leitura é chamado exatamente uma vez com o caminho correto.
 
-    Args:
+    Parameters:
         MockDataExtractor (MagicMock): Mock da classe `DataExtractor` para simular a leitura de dados 
-            e evitar acessos reais ao sistema de arquivos.
+                                       e evitar acessos reais ao sistema de arquivos.
 
     Raises:
         AssertionError: Se a saída da função não corresponder ao DataFrame esperado.

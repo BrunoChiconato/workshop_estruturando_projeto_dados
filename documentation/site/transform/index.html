@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../extract/">
       
-      
-        <link rel="next" href="../extract/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Geração dos Dados - Pipeline de Dados de Vendas</title>
+        <title>Transformação dos Dados - Pipeline de Dados de Vendas</title>
       
     
     
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Geração dos Dados
+              Transformação dos Dados
             
           </span>
         </div>
@@ -242,28 +240,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Geração dos Dados
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../generate_data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -272,42 +252,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#descricao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Descrição
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#funcao-generate_data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Função generate_data
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -336,10 +280,28 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../transform/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Transformação dos Dados
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -348,6 +310,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descricao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descrição
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionamento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcao-transform_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Função transform_data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -386,9 +393,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#funcao-generate_data" class="md-nav__link">
+  <a href="#funcionamento" class="md-nav__link">
     <span class="md-ellipsis">
-      Função generate_data
+      Funcionamento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcao-transform_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Função transform_data
     </span>
   </a>
   
@@ -412,29 +428,33 @@
   
 
 
-  <h1>Geração dos Dados</h1>
+  <h1>Transformação dos Dados</h1>
 
 <h2 id="descricao">Descrição</h2>
-<p>A presente seção inclui um código em Python, localizado em <code>funcs/generate_data.py</code>, que gera dados fictícios de vendas para diversas finalidades. A função principal, <code>generate_data</code>, utiliza as bibliotecas <code>os</code>, <code>pandas</code> e <code>numpy</code> para criar dados simulados e salvá-los em formatos variados, incluindo <code>.csv</code>, <code>.json</code> e <code>.parquet</code>.</p>
-<p>Abaixo está uma descrição detalhada do funcionamento da função <code>generate_data</code>:</p>
+<p>Esta seção descreve a função <code>transform_data</code>, localizada em <code>funcs/transform.py</code>. Essa função recebe um <code>DataFrame</code> de entrada e aplica uma série de verificações e operações de transformação, com o objetivo de consolidar os valores da coluna <code>price</code> por método de pagamento (<code>payment_method</code>). O resultado final é um novo <code>DataFrame</code> com cada método de pagamento único e a soma dos preços correspondentes.</p>
+<p>A função é decorada com dois decoradores:
+- <strong><code>log_decorator</code></strong>: Registra logs da execução, permitindo rastrear o processamento dos dados.
+- <strong><code>time_decorador</code></strong>: Mede o tempo de execução da função, facilitando o monitoramento de performance dentro da pipeline.</p>
+<h2 id="funcionamento">Funcionamento</h2>
+<p>O funcionamento da função <code>transform_data</code> pode ser dividido nas seguintes etapas:</p>
 <ol>
 <li>
-<p><strong>Parâmetro de caminho</strong>: A função recebe uma string que especifica o caminho onde os dados gerados serão salvos. Esse caminho pode ser personalizado pelo usuário.</p>
+<p><strong>Verificação das colunas necessárias</strong>: A função começa verificando se as colunas <code>payment_method</code> e <code>price</code> estão presentes no <code>DataFrame</code> de entrada. Caso uma dessas colunas esteja ausente, um erro do tipo <code>KeyError</code> é levantado, informando a ausência da coluna necessária. Esse mecanismo de verificação garante que a função só prossiga se os dados mínimos exigidos estiverem presentes.</p>
 </li>
 <li>
-<p><strong>Definição do tamanho dos dados</strong>: O número de linhas do conjunto de dados é definido na função. Neste projeto, o valor padrão é <code>n = 1000</code>, mas pode ser ajustado conforme a necessidade.</p>
+<p><strong>Conversão de valores para numérico</strong>: Em seguida, a função tenta converter os valores da coluna <code>price</code> para um tipo numérico. Se houver valores não numéricos, eles são convertidos para <code>NaN</code>. Essa etapa é importante para garantir que apenas valores válidos sejam considerados na agregação dos dados.</p>
 </li>
 <li>
-<p><strong>Criação do DataFrame</strong>: Utilizando a biblioteca <code>pandas</code>, a função cria um <strong>DataFrame</strong> e define colunas que representam um relatório de vendas fictício. Para popular essas colunas, são utilizados arrays gerados com a biblioteca <code>numpy</code>, simulando dados como identificadores de vendas, valores, datas e outros detalhes relevantes.</p>
+<p><strong>Validação de dados numéricos</strong>: A função verifica se todos os valores na coluna <code>price</code> são inválidos (<code>NaN</code>). Caso todos os valores sejam inválidos, a função retorna um <code>DataFrame</code> vazio e exibe uma mensagem de erro, informando que não há dados válidos para o cálculo.</p>
 </li>
 <li>
-<p><strong>Verificação e criação do caminho</strong>: A função verifica se o caminho fornecido existe. Caso o caminho não exista, ele é criado automaticamente para garantir que os arquivos possam ser salvos.</p>
+<p><strong>Agrupamento e soma dos valores</strong>: Após a validação, a função realiza o agrupamento dos dados pela coluna <code>payment_method</code>, somando os valores correspondentes de <code>price</code> para cada método de pagamento. O resultado é um novo <code>DataFrame</code> com as colunas <code>payment_method</code> e <code>price</code>, onde cada linha representa um método de pagamento único e a soma total de <code>price</code> associada a ele.</p>
 </li>
 <li>
-<p><strong>Salvamento dos arquivos</strong>: O <strong>DataFrame</strong> gerado é salvo nos três formatos de arquivo especificados (<code>.csv</code>, <code>.json</code> e <code>.parquet</code>). Após o salvamento, uma mensagem de sucesso é exibida, confirmando que os arquivos foram gerados com sucesso.</p>
+<p><strong>Tratamento de exceções</strong>: Caso ocorra qualquer erro inesperado durante a execução da função, uma mensagem de erro é exibida e um <code>DataFrame</code> vazio é retornado. Esse tratamento garante a robustez da função, evitando falhas críticas na pipeline ETL.</p>
 </li>
 </ol>
-<h2 id="funcao-generate_data">Função <code>generate_data</code></h2>
+<h2 id="funcao-transform_data">Função <code>transform_data</code></h2>
 
 
 <div class="doc doc-object doc-function">
@@ -444,21 +464,12 @@
 
     <div class="doc doc-contents first">
 
-        <p>Gera dados fictícios de vendas e salva em CSV, Parquet e JSON.</p>
-<p>Esta função cria um conjunto de dados fictícios com as seguintes colunas:</p>
-<ul>
-<li>order_id (int)</li>
-<li>customer_id (int)</li>
-<li>order_date (date)</li>
-<li>product_id (int)</li>
-<li>quantity (int)</li>
-<li>price (float)</li>
-<li>payment_method (string)</li>
-<li>store_location (string)</li>
-</ul>
-<p>A função verifica se o diretório especificado pelo argumento 'path' existe.
-Caso o diretório não exista, ele será criado. Em seguida, os dados são gerados
-e salvos nos formatos 'csv', 'parquet' e 'json'.</p>
+        <p>Transforma um DataFrame agrupando os valores de 'price' por 'payment_method'.</p>
+<p>Esta função verifica se as colunas 'payment_method' e 'price' estão presentes no 
+DataFrame fornecido. Em seguida, realiza um agrupamento dos dados, somando os valores 
+da coluna 'price' para cada método de pagamento. Retorna um novo DataFrame com duas 
+colunas: 'payment_method' e 'price', onde 'price' representa a soma total para cada 
+método de pagamento.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -474,14 +485,14 @@ e salvos nos formatos 'csv', 'parquet' e 'json'.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>path</code>
+                <code>data</code>
             </td>
             <td>
-                  <code>str</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Caminho da pasta onde os arquivos serão salvos.</p>
+                <p>pd.DataFrame
+DataFrame de entrada que deve conter as colunas 'payment_method' e 'price'.</p>
               </div>
             </td>
             <td>
@@ -503,20 +514,54 @@ e salvos nos formatos 'csv', 'parquet' e 'json'.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>None</code>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>None</p>
+                <p>pd.DataFrame
+DataFrame transformado com as colunas:
+- 'payment_method': Métodos de pagamento únicos.
+- 'price': Soma dos valores da coluna 'price' para cada método de pagamento.</p>
               </div>
             </td>
           </tr>
       </tbody>
     </table>
 
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>KeyError</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Se a coluna 'payment_method' ou 'price' não estiver presente no DataFrame.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="exception" open>
+  <summary>Exception</summary>
+  <p>Se ocorrer qualquer outro erro durante a execução da função. Neste caso, uma 
+mensagem de erro será exibida e um DataFrame vazio será retornado.</p>
+</details>
             <details class="quote">
-              <summary>Source code in <code>funcs\generate_data.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+              <summary>Source code in <code>funcs\transform.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
@@ -560,51 +605,65 @@ e salvos nos formatos 'csv', 'parquet' e 'json'.</p>
 <span class="normal">49</span>
 <span class="normal">50</span>
 <span class="normal">51</span>
-<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generate_data</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@time_decorador</span>
+<span class="nd">@log_decorator</span>
+<span class="k">def</span> <span class="nf">transform_data</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Gera dados fictícios de vendas e salva em CSV, Parquet e JSON.</span>
+<span class="sd">    Transforma um DataFrame agrupando os valores de &#39;price&#39; por &#39;payment_method&#39;.</span>
 
-<span class="sd">    Esta função cria um conjunto de dados fictícios com as seguintes colunas:</span>
-
-<span class="sd">    - order_id (int)</span>
-<span class="sd">    - customer_id (int)</span>
-<span class="sd">    - order_date (date)</span>
-<span class="sd">    - product_id (int)</span>
-<span class="sd">    - quantity (int)</span>
-<span class="sd">    - price (float)</span>
-<span class="sd">    - payment_method (string)</span>
-<span class="sd">    - store_location (string)</span>
-
-<span class="sd">    A função verifica se o diretório especificado pelo argumento &#39;path&#39; existe.</span>
-<span class="sd">    Caso o diretório não exista, ele será criado. Em seguida, os dados são gerados</span>
-<span class="sd">    e salvos nos formatos &#39;csv&#39;, &#39;parquet&#39; e &#39;json&#39;.</span>
+<span class="sd">    Esta função verifica se as colunas &#39;payment_method&#39; e &#39;price&#39; estão presentes no </span>
+<span class="sd">    DataFrame fornecido. Em seguida, realiza um agrupamento dos dados, somando os valores </span>
+<span class="sd">    da coluna &#39;price&#39; para cada método de pagamento. Retorna um novo DataFrame com duas </span>
+<span class="sd">    colunas: &#39;payment_method&#39; e &#39;price&#39;, onde &#39;price&#39; representa a soma total para cada </span>
+<span class="sd">    método de pagamento.</span>
 
 <span class="sd">    Parameters:</span>
-<span class="sd">        path (str): Caminho da pasta onde os arquivos serão salvos.</span>
+<span class="sd">        data : pd.DataFrame</span>
+<span class="sd">            DataFrame de entrada que deve conter as colunas &#39;payment_method&#39; e &#39;price&#39;.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        None</span>
+<span class="sd">        pd.DataFrame</span>
+<span class="sd">            DataFrame transformado com as colunas:</span>
+<span class="sd">            - &#39;payment_method&#39;: Métodos de pagamento únicos.</span>
+<span class="sd">            - &#39;price&#39;: Soma dos valores da coluna &#39;price&#39; para cada método de pagamento.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        KeyError: Se a coluna &#39;payment_method&#39; ou &#39;price&#39; não estiver presente no DataFrame.</span>
+
+<span class="sd">    Exception:</span>
+<span class="sd">        Se ocorrer qualquer outro erro durante a execução da função. Neste caso, uma </span>
+<span class="sd">        mensagem de erro será exibida e um DataFrame vazio será retornado.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span>
-    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-        <span class="s1">&#39;order_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
-        <span class="s1">&#39;customer_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">),</span>
-        <span class="s1">&#39;order_date&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">),</span>
-        <span class="s1">&#39;product_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">),</span>
-        <span class="s1">&#39;quantity&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">),</span>
-        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span>
-        <span class="s1">&#39;payment_method&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;Credit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Debit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Cash&#39;</span><span class="p">,</span> <span class="s1">&#39;PayPal&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">),</span>
-        <span class="s1">&#39;store_location&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;Los Angeles&#39;</span><span class="p">,</span> <span class="s1">&#39;Chicago&#39;</span><span class="p">,</span> <span class="s1">&#39;Houston&#39;</span><span class="p">,</span> <span class="s1">&#39;Phoenix&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
-    <span class="p">})</span>
+    <span class="n">transform_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
-    <span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;vendas_ficticias.csv&#39;</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">&#39;vendas_ficticias.parquet&#39;</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">&#39;vendas_ficticias.json&#39;</span><span class="p">),</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;records&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;payment_method&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;A coluna &#39;payment_method&#39; não foi encontrada.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;price&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;A coluna &#39;price&#39; não foi encontrada.&quot;</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Arquivos criados com sucesso!&#39;</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Erro: Todos os valores de &quot;price&quot; são inválidos. Tente novamente.&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">transform_data</span>
+
+        <span class="n">transform_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;payment_method&#39;</span><span class="p">)[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+        <span class="n">transform_data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;payment_method&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">transform_data</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Erro: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1"> Tente novamente.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">transform_data</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>

@@ -1,4 +1,4 @@
-## Conteúdo
+## Descrição
 
 Esta seção descreve o código em Python localizado em `funcs/extract.py`, que extrai dados de diferentes tipos de arquivos, consolida-os em um **DataFrame** e retorna o **DataFrame** consolidado. Para alcançar esse objetivo, é definida a função `extract_and_consolidate`.
 

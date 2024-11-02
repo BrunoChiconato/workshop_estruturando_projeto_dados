@@ -1,4 +1,4 @@
-## Conteúdo
+## Descrição
 
 A presente seção inclui um código em Python, localizado em `funcs/generate_data.py`, que gera dados fictícios de vendas para diversas finalidades. A função principal, `generate_data`, utiliza as bibliotecas `os`, `pandas` e `numpy` para criar dados simulados e salvá-los em formatos variados, incluindo `.csv`, `.json` e `.parquet`.
 

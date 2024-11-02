@@ -24,7 +24,7 @@ def generate_data(path: str) -> None:
     Caso o diretório não exista, ele será criado. Em seguida, os dados são gerados
     e salvos nos formatos 'csv', 'parquet' e 'json'.
 
-    Args:
+    Parameters:
         path (str): Caminho da pasta onde os arquivos serão salvos.
 
     Returns:

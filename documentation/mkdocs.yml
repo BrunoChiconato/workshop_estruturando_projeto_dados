@@ -4,6 +4,7 @@ nav:
   - Introdução: index.md
   - Geração dos Dados: generate_data.md
   - Extração dos Dados: extract.md
+  - Transformação dos Dados: transform.md
 
 theme:
   name: material
