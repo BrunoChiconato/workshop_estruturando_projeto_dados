@@ -9,25 +9,25 @@ from funcs.extract import extract_and_consolidate  # type: ignore
 @patch('funcs.extract.DataExtractor')
 def test_extract_and_consolidate(MockDataExtractor):
     """
-    Testa a função `extract_and_consolidate` para garantir que ela consolida 
-    corretamente os dados de várias fontes (CSV, JSON e Parquet) em um único DataFrame.
+    Testa a função `extract_and_consolidate` para verificar a consolidação de dados de múltiplas
+    fontes (CSV, JSON e Parquet) em um único DataFrame.
 
-    A função simula os métodos da classe `DataExtractor` usando mocks para evitar o acesso 
-    ao sistema de arquivos. O teste valida os seguintes aspectos:
+    Este teste simula os métodos da classe `DataExtractor` usando mocks, evitando o acesso 
+    ao sistema de arquivos e garantindo que a função `extract_and_consolidate` funcione corretamente.
+    São validados os seguintes aspectos:
 
     - O método `validate_input_path` aceita o caminho dos dados fornecido.
-    - Os métodos `read_csv_data`, `read_json_data` e `read_parquet_data` retornam 
-      DataFrames simulados para os dados CSV, JSON e Parquet, respectivamente.
-    - A saída da função `extract_and_consolidate` é um DataFrame consolidado que corresponde 
-      à estrutura e aos valores esperados.
-    - Verifica se cada método de leitura foi chamado exatamente uma vez com o caminho correto.
-    
-    Parâmetros:
-    - MockDataExtractor (MagicMock): Mock da classe `DataExtractor` para simular a leitura 
-      de dados e evitar acessos reais ao sistema de arquivos.
+    - Os métodos `read_csv_data`, `read_json_data` e `read_parquet_data` retornam DataFrames simulados 
+      para os dados CSV, JSON e Parquet, respectivamente.
+    - A função `extract_and_consolidate` retorna um DataFrame consolidado com a estrutura e os valores esperados.
+    - Cada método de leitura é chamado exatamente uma vez com o caminho correto.
 
-    Exceções:
-    - Levanta um erro de asserção se a saída da função não corresponder ao DataFrame esperado.
+    Args:
+        MockDataExtractor (MagicMock): Mock da classe `DataExtractor` para simular a leitura de dados 
+            e evitar acessos reais ao sistema de arquivos.
+
+    Raises:
+        AssertionError: Se a saída da função não corresponder ao DataFrame esperado.
     """
     mock_extractor = MockDataExtractor.return_value
     
