@@ -322,6 +322,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#teste-unitario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teste unitário
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste unitário">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aspectos-validados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aspectos validados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcao-test_extract_and_consolidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Função test_extract_and_consolidate
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -367,6 +400,39 @@
   <a href="#funcao-extract_and_consolidate" class="md-nav__link">
     <span class="md-ellipsis">
       Função extract_and_consolidate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-unitario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teste unitário
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste unitário">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aspectos-validados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aspectos validados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcao-test_extract_and_consolidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Função test_extract_and_consolidate
     </span>
   </a>
   
@@ -543,6 +609,266 @@ dados são concatenados em um único DataFrame.</p>
 
     <span class="n">consolidate_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">csv_data</span><span class="p">,</span> <span class="n">json_data</span><span class="p">,</span> <span class="n">parquet_data</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">consolidate_data</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="teste-unitario">Teste unitário</h2>
+<p>Esse teste unitário verifica o comportamento correto da função <code>extract_and_consolidate</code> utilizando mocks para simular as operações da classe <code>DataExtractor</code>. Isso permite validar a função sem realmente acessar o sistema de arquivos.</p>
+<h3 id="aspectos-validados">Aspectos validados</h3>
+<ol>
+<li><strong>Validação do caminho de entrada</strong>: O teste assegura que o método <code>validate_input_path</code> aceita o caminho dos dados fornecido.</li>
+<li><strong>Leitura de dados simulados</strong>:<ul>
+<li>São criados mocks para os métodos <code>read_csv_data</code>, <code>read_json_data</code> e <code>read_parquet_data</code>, que retornam DataFrames pré-definidos para simular dados CSV, JSON e Parquet.</li>
+<li>Esses mocks garantem que o teste é isolado do sistema de arquivos real.</li>
+</ul>
+</li>
+<li><strong>Consolidação dos dados</strong>:<ul>
+<li>O teste chama a função <code>extract_and_consolidate</code> e compara o DataFrame resultante com um DataFrame esperado que contém a consolidação dos dados simulados.</li>
+<li>A comparação é feita com <code>pd.testing.assert_frame_equal</code>, que verifica se o DataFrame resultante é idêntico ao esperado em estrutura e valores.</li>
+</ul>
+</li>
+<li><strong>Verificação de chamadas</strong>:<ul>
+<li>O teste verifica que cada método de leitura (<code>read_csv_data</code>, <code>read_json_data</code>, <code>read_parquet_data</code>) foi chamado exatamente uma vez com o caminho correto, usando <code>assert_called_once_with</code>.</li>
+</ul>
+</li>
+<li><strong>Asserção final</strong>: Caso a saída da função não corresponda ao DataFrame esperado, um erro de asserção é levantado, indicando uma falha no comportamento esperado da função.</li>
+</ol>
+<h2 id="funcao-test_extract_and_consolidate">Função <code>test_extract_and_consolidate</code></h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+    <div class="doc doc-contents first">
+
+        <p>Testa a função <code>extract_and_consolidate</code> para verificar a consolidação de dados de múltiplas
+fontes (CSV, JSON e Parquet) em um único DataFrame.</p>
+<p>Este teste simula os métodos da classe <code>DataExtractor</code> usando mocks, evitando o acesso 
+ao sistema de arquivos e garantindo que a função <code>extract_and_consolidate</code> funcione corretamente.
+São validados os seguintes aspectos:</p>
+<ul>
+<li>O método <code>validate_input_path</code> aceita o caminho dos dados fornecido.</li>
+<li>Os métodos <code>read_csv_data</code>, <code>read_json_data</code> e <code>read_parquet_data</code> retornam DataFrames simulados 
+  para os dados CSV, JSON e Parquet, respectivamente.</li>
+<li>A função <code>extract_and_consolidate</code> retorna um DataFrame consolidado com a estrutura e os valores esperados.</li>
+<li>Cada método de leitura é chamado exatamente uma vez com o caminho correto.</li>
+</ul>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>MockDataExtractor</code>
+            </td>
+            <td>
+                  <code><span title="unittest.mock.MagicMock">MagicMock</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Mock da classe <code>DataExtractor</code> para simular a leitura de dados 
+e evitar acessos reais ao sistema de arquivos.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>AssertionError</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Se a saída da função não corresponder ao DataFrame esperado.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>tests\test_extract.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;funcs.extract.DataExtractor&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_extract_and_consolidate</span><span class="p">(</span><span class="n">MockDataExtractor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Testa a função `extract_and_consolidate` para verificar a consolidação de dados de múltiplas</span>
+<span class="sd">    fontes (CSV, JSON e Parquet) em um único DataFrame.</span>
+
+<span class="sd">    Este teste simula os métodos da classe `DataExtractor` usando mocks, evitando o acesso </span>
+<span class="sd">    ao sistema de arquivos e garantindo que a função `extract_and_consolidate` funcione corretamente.</span>
+<span class="sd">    São validados os seguintes aspectos:</span>
+
+<span class="sd">    - O método `validate_input_path` aceita o caminho dos dados fornecido.</span>
+<span class="sd">    - Os métodos `read_csv_data`, `read_json_data` e `read_parquet_data` retornam DataFrames simulados </span>
+<span class="sd">      para os dados CSV, JSON e Parquet, respectivamente.</span>
+<span class="sd">    - A função `extract_and_consolidate` retorna um DataFrame consolidado com a estrutura e os valores esperados.</span>
+<span class="sd">    - Cada método de leitura é chamado exatamente uma vez com o caminho correto.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        MockDataExtractor (MagicMock): Mock da classe `DataExtractor` para simular a leitura de dados </span>
+<span class="sd">            e evitar acessos reais ao sistema de arquivos.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        AssertionError: Se a saída da função não corresponder ao DataFrame esperado.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mock_extractor</span> <span class="o">=</span> <span class="n">MockDataExtractor</span><span class="o">.</span><span class="n">return_value</span>
+
+    <span class="n">mock_extractor</span><span class="o">.</span><span class="n">validate_input_path</span><span class="o">.</span><span class="n">side_effect</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">path</span><span class="p">:</span> <span class="n">path</span>
+
+    <span class="n">mock_extractor</span><span class="o">.</span><span class="n">read_csv_data</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;order_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+        <span class="s1">&#39;customer_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">202</span><span class="p">,</span> <span class="mi">448</span><span class="p">],</span> 
+        <span class="s1">&#39;order_date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2023-01-02&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;product_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1484</span><span class="p">,</span> <span class="mi">1027</span><span class="p">],</span> 
+        <span class="s1">&#39;quantity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> 
+        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">99.68</span><span class="p">,</span> <span class="mf">20.8</span><span class="p">],</span> 
+        <span class="s1">&#39;payment_method&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cash&#39;</span><span class="p">,</span> <span class="s1">&#39;Debit Card&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;store_location&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Los Angeles&#39;</span><span class="p">,</span> <span class="s1">&#39;Houston&#39;</span><span class="p">]</span>
+    <span class="p">})</span>
+    <span class="n">mock_extractor</span><span class="o">.</span><span class="n">read_json_data</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;order_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> 
+        <span class="s1">&#39;customer_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">370</span><span class="p">],</span> 
+        <span class="s1">&#39;order_date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2023-01-03&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;product_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1713</span><span class="p">],</span> 
+        <span class="s1">&#39;quantity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> 
+        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">362.8</span><span class="p">],</span> 
+        <span class="s1">&#39;payment_method&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Credit Card&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;store_location&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;New York&#39;</span><span class="p">]</span>
+    <span class="p">})</span>
+    <span class="n">mock_extractor</span><span class="o">.</span><span class="n">read_parquet_data</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;order_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> 
+        <span class="s1">&#39;customer_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">206</span><span class="p">],</span> 
+        <span class="s1">&#39;order_date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2023-01-04&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;product_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1038</span><span class="p">],</span> 
+        <span class="s1">&#39;quantity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> 
+        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">214.82</span><span class="p">],</span> 
+        <span class="s1">&#39;payment_method&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Credit Card&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;store_location&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Houston&#39;</span><span class="p">]</span>
+    <span class="p">})</span>
+
+    <span class="n">data_path</span> <span class="o">=</span> <span class="s1">&#39;fake_path&#39;</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">extract_and_consolidate</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+
+    <span class="n">mock_extractor</span><span class="o">.</span><span class="n">read_csv_data</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="n">input_path</span><span class="o">=</span><span class="n">data_path</span><span class="p">)</span>
+    <span class="n">mock_extractor</span><span class="o">.</span><span class="n">read_json_data</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="n">input_path</span><span class="o">=</span><span class="n">data_path</span><span class="p">)</span>
+    <span class="n">mock_extractor</span><span class="o">.</span><span class="n">read_parquet_data</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="n">input_path</span><span class="o">=</span><span class="n">data_path</span><span class="p">)</span>
+
+    <span class="n">expected_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;order_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> 
+        <span class="s1">&#39;customer_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">202</span><span class="p">,</span> <span class="mi">448</span><span class="p">,</span> <span class="mi">370</span><span class="p">,</span> <span class="mi">206</span><span class="p">],</span> 
+        <span class="s1">&#39;order_date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2023-01-02&#39;</span><span class="p">,</span> <span class="s1">&#39;2023-01-03&#39;</span><span class="p">,</span> <span class="s1">&#39;2023-01-04&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;product_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1484</span><span class="p">,</span> <span class="mi">1027</span><span class="p">,</span> <span class="mi">1713</span><span class="p">,</span> <span class="mi">1038</span><span class="p">],</span> 
+        <span class="s1">&#39;quantity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> 
+        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">99.68</span><span class="p">,</span> <span class="mf">20.8</span><span class="p">,</span> <span class="mf">362.8</span><span class="p">,</span> <span class="mf">214.82</span><span class="p">],</span> 
+        <span class="s1">&#39;payment_method&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cash&#39;</span><span class="p">,</span> <span class="s1">&#39;Debit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Credit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Credit Card&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;store_location&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Los Angeles&#39;</span><span class="p">,</span> <span class="s1">&#39;Houston&#39;</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;Houston&#39;</span><span class="p">]</span>
+    <span class="p">})</span>
+
+    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected_data</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
