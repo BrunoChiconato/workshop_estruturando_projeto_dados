@@ -12,6 +12,8 @@
         <link rel="prev" href="../generate_data/">
       
       
+        <link rel="next" href="../transform/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#conteudo" class="md-skip">
+        <a href="#descricao" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -305,9 +307,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#conteudo" class="md-nav__link">
+  <a href="#descricao" class="md-nav__link">
     <span class="md-ellipsis">
-      Conteúdo
+      Descrição
     </span>
   </a>
   
@@ -363,6 +365,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformação dos Dados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -388,9 +410,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#conteudo" class="md-nav__link">
+  <a href="#descricao" class="md-nav__link">
     <span class="md-ellipsis">
-      Conteúdo
+      Descrição
     </span>
   </a>
   
@@ -458,7 +480,7 @@
 
   <h1>Extração dos Dados</h1>
 
-<h2 id="conteudo">Conteúdo</h2>
+<h2 id="descricao">Descrição</h2>
 <p>Esta seção descreve o código em Python localizado em <code>funcs/extract.py</code>, que extrai dados de diferentes tipos de arquivos, consolida-os em um <strong>DataFrame</strong> e retorna o <strong>DataFrame</strong> consolidado. Para alcançar esse objetivo, é definida a função <code>extract_and_consolidate</code>.</p>
 <p>A função <code>extract_and_consolidate</code> utiliza a biblioteca <code>pandas</code> para a extração e consolidação dos dados. Ela faz uso da classe <code>DataExtractor</code> (descrita em detalhes na seção <strong>Classes</strong>) e aplica dois decoradores: um para registrar logs e outro para calcular o tempo total de execução da função, ambos explicados na seção <strong>Decoradores</strong> desta documentação.</p>
 <p>A função recebe como parâmetro o caminho do diretório onde os dados de entrada estão armazenados. Em seguida, cria uma instância da classe <code>DataExtractor</code> e utiliza seus métodos para ler dados em diferentes formatos, armazenando cada conjunto de dados em um DataFrame específico. Por fim, a função concatena todos esses DataFrames e retorna o resultado consolidado ao usuário.</p>
@@ -592,7 +614,7 @@ dados são concatenados em um único DataFrame.</p>
 <span class="sd">    de arquivos (CSV, JSON e Parquet) presentes em um diretório específico. Após a extração, os</span>
 <span class="sd">    dados são concatenados em um único DataFrame.</span>
 
-<span class="sd">    Args:</span>
+<span class="sd">    Parameters:</span>
 <span class="sd">        data_path (str): Caminho do diretório onde os arquivos CSV, JSON e Parquet estão localizados.</span>
 
 <span class="sd">    Returns:</span>
@@ -679,7 +701,7 @@ São validados os seguintes aspectos:</p>
             <td>
               <div class="doc-md-description">
                 <p>Mock da classe <code>DataExtractor</code> para simular a leitura de dados 
-e evitar acessos reais ao sistema de arquivos.</p>
+                           e evitar acessos reais ao sistema de arquivos.</p>
               </div>
             </td>
             <td>
@@ -807,9 +829,9 @@ e evitar acessos reais ao sistema de arquivos.</p>
 <span class="sd">    - A função `extract_and_consolidate` retorna um DataFrame consolidado com a estrutura e os valores esperados.</span>
 <span class="sd">    - Cada método de leitura é chamado exatamente uma vez com o caminho correto.</span>
 
-<span class="sd">    Args:</span>
+<span class="sd">    Parameters:</span>
 <span class="sd">        MockDataExtractor (MagicMock): Mock da classe `DataExtractor` para simular a leitura de dados </span>
-<span class="sd">            e evitar acessos reais ao sistema de arquivos.</span>
+<span class="sd">                                       e evitar acessos reais ao sistema de arquivos.</span>
 
 <span class="sd">    Raises:</span>
 <span class="sd">        AssertionError: Se a saída da função não corresponder ao DataFrame esperado.</span>
