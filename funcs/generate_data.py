@@ -10,7 +10,7 @@ def generate_data(path: str) -> None:
     Gera dados fictícios de vendas e salva em CSV, Parquet e JSON.
 
     Esta função cria um conjunto de dados fictícios com as seguintes colunas:
-    
+
     - order_id (int)
     - customer_id (int)
     - order_date (date)

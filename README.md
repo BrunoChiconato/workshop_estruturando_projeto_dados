@@ -39,7 +39,7 @@ workshop_estruturando_projeto_dados
 │   └── raw
 │       ├── dados_vendas.csv
 │       ├── dados_vendas.json
-│       └── dados_vendas.parquet    
+│       └── dados_vendas.parquet
 ├── decorators
 │   ├── __init__.py              # Torna o diretório um pacote Python.
 │   └── decorators.py            # Módulo com decoradores para funcionalidades específicas.

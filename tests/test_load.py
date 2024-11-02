@@ -15,7 +15,7 @@ def test_load_data_success(mock_getenv, mock_quote_plus, mock_create_engine):
     Testa o comportamento da função `load_data` quando os dados são carregados com sucesso.
 
     Este teste simula um cenário onde todas as variáveis de ambiente necessárias estão presentes
-    e a conexão com o banco de dados PostgreSQL é bem-sucedida. Verifica se a função `to_sql` 
+    e a conexão com o banco de dados PostgreSQL é bem-sucedida. Verifica se a função `to_sql`
     do pandas é chamada corretamente para carregar os dados na tabela.
 
     Parameters:
@@ -79,7 +79,7 @@ def test_load_data_connection_error(mock_getenv, mock_quote_plus, mock_create_en
     Testa o comportamento da função `load_data` ao ocorrer um erro de conexão com o banco de dados.
 
     Este teste simula um cenário onde as variáveis de ambiente estão presentes, mas ocorre um erro
-    ao criar a engine de conexão ao banco de dados PostgreSQL. Verifica se a função levanta uma 
+    ao criar a engine de conexão ao banco de dados PostgreSQL. Verifica se a função levanta uma
     `SQLAlchemyError` corretamente.
 
     Parameters:

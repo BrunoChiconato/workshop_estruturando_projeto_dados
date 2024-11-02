@@ -6,7 +6,7 @@ from funcs.transform import transform_data
 
 def test_transform_data_success():
     """
-    Testa a função `transform_data` com um DataFrame válido, verificando se 
+    Testa a função `transform_data` com um DataFrame válido, verificando se
     o agrupamento por 'payment_method' é realizado corretamente.
     """
     input_data = pd.DataFrame({
@@ -20,7 +20,7 @@ def test_transform_data_success():
     })
 
     result = transform_data(input_data)
-    
+
     pd.testing.assert_frame_equal(result, expected_data)
 
 def test_transform_data_missing_columns():
@@ -57,6 +57,5 @@ def test_transform_data_unexpected_exception():
 
     result = transform_data(input_data_invalid)
     expected_data = pd.DataFrame()
-    
-    pd.testing.assert_frame_equal(result, expected_data)
 
+    pd.testing.assert_frame_equal(result, expected_data)

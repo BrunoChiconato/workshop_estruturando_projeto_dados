@@ -88,7 +88,7 @@ class DataExtractor:
         if not os.path.exists(input_path):
             raise FileNotFoundError(f"O caminho '{input_path}' não existe.")
         return input_path
-    
+
     def read_csv_data(self, input_path: str) -> pd.DataFrame:
         """
         Lê dados de um único arquivo CSV em um diretório e retorna um DataFrame.
@@ -115,7 +115,7 @@ class DataExtractor:
         csv_files = glob.glob(os.path.join(ok_input_path, '*.csv'))
         if len(csv_files) != 1:
             raise FileNotFoundError(f"Esperado exatamente um arquivo CSV no diretório '{input_path}', mas encontrou {len(csv_files)}.")
-        
+
         validated_df: pd.DataFrame = pd.read_csv(csv_files[0], encoding='utf-8')
         return self.validate_dataframe(validated_df)
 
@@ -145,10 +145,10 @@ class DataExtractor:
         json_files = glob.glob(os.path.join(ok_input_path, '*.json'))
         if len(json_files) != 1:
             raise FileNotFoundError(f"Esperado exatamente um arquivo JSON no diretório '{input_path}', mas encontrou {len(json_files)}.")
-        
+
         validated_df: pd.DataFrame = pd.read_json(json_files[0], lines=True, encoding='utf-8')
         return self.validate_dataframe(validated_df)
-    
+
     def read_parquet_data(self, input_path: str) -> pd.DataFrame:
         """
         Lê dados de um único arquivo Parquet em um diretório e retorna um DataFrame.
@@ -175,6 +175,6 @@ class DataExtractor:
         parquet_files = glob.glob(os.path.join(ok_input_path, '*.parquet'))
         if len(parquet_files) != 1:
             raise FileNotFoundError(f"Esperado exatamente um arquivo Parquet no diretório '{input_path}', mas encontrou {len(parquet_files)}.")
-        
+
         validated_df: pd.DataFrame = pd.read_parquet(parquet_files[0])
         return self.validate_dataframe(validated_df)

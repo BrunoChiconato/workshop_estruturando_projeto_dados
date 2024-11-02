@@ -17,8 +17,8 @@ def load_data(data: pd.DataFrame) -> None:
     Carrega um DataFrame em uma tabela PostgreSQL chamada 'sales_consolidated' no Render.
 
     Esta função estabelece uma conexão com um banco de dados PostgreSQL usando credenciais armazenadas
-    em variáveis de ambiente. Se as credenciais estiverem corretas e a conexão for bem-sucedida, 
-    os dados do DataFrame fornecido serão carregados na tabela 'sales_consolidated'. Caso a tabela 
+    em variáveis de ambiente. Se as credenciais estiverem corretas e a conexão for bem-sucedida,
+    os dados do DataFrame fornecido serão carregados na tabela 'sales_consolidated'. Caso a tabela
     já exista, ela será substituída.
 
     Parameters:
@@ -51,7 +51,7 @@ def load_data(data: pd.DataFrame) -> None:
         if not all([db_username, db_password, db_hostname, db_port, db_name]):
             logger.error("Algumas variáveis de ambiente estão ausentes.")
             raise ValueError("Variáveis de ambiente necessárias para a conexão ao banco de dados não foram encontradas.")
-        
+
         connection_url = f"postgresql+psycopg2://{db_username}:{db_password}@{db_hostname}:{db_port}/{db_name}"
 
         engine = create_engine(connection_url, connect_args={'client_encoding': 'utf8'})
