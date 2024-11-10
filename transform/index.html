@@ -351,6 +351,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#teste-unitario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teste unitário
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste unitário">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-dos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura dos testes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testes-implementados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testes implementados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consideracoes-finais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerações finais
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -410,6 +452,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#teste-unitario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teste unitário
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teste unitário">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-dos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura dos testes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testes-implementados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testes implementados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consideracoes-finais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerações finais
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -465,10 +549,10 @@
     <div class="doc doc-contents first">
 
         <p>Transforma um DataFrame agrupando os valores de 'price' por 'payment_method'.</p>
-<p>Esta função verifica se as colunas 'payment_method' e 'price' estão presentes no 
-DataFrame fornecido. Em seguida, realiza um agrupamento dos dados, somando os valores 
-da coluna 'price' para cada método de pagamento. Retorna um novo DataFrame com duas 
-colunas: 'payment_method' e 'price', onde 'price' representa a soma total para cada 
+<p>Esta função verifica se as colunas 'payment_method' e 'price' estão presentes no
+DataFrame fornecido. Em seguida, realiza um agrupamento dos dados, somando os valores
+da coluna 'price' para cada método de pagamento. Retorna um novo DataFrame com duas
+colunas: 'payment_method' e 'price', onde 'price' representa a soma total para cada
 método de pagamento.</p>
 
 
@@ -554,7 +638,7 @@ DataFrame transformado com as colunas:
 
 <details class="exception" open>
   <summary>Exception</summary>
-  <p>Se ocorrer qualquer outro erro durante a execução da função. Neste caso, uma 
+  <p>Se ocorrer qualquer outro erro durante a execução da função. Neste caso, uma
 mensagem de erro será exibida e um DataFrame vazio será retornado.</p>
 </details>
             <details class="quote">
@@ -617,10 +701,10 @@ mensagem de erro será exibida e um DataFrame vazio será retornado.</p>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Transforma um DataFrame agrupando os valores de &#39;price&#39; por &#39;payment_method&#39;.</span>
 
-<span class="sd">    Esta função verifica se as colunas &#39;payment_method&#39; e &#39;price&#39; estão presentes no </span>
-<span class="sd">    DataFrame fornecido. Em seguida, realiza um agrupamento dos dados, somando os valores </span>
-<span class="sd">    da coluna &#39;price&#39; para cada método de pagamento. Retorna um novo DataFrame com duas </span>
-<span class="sd">    colunas: &#39;payment_method&#39; e &#39;price&#39;, onde &#39;price&#39; representa a soma total para cada </span>
+<span class="sd">    Esta função verifica se as colunas &#39;payment_method&#39; e &#39;price&#39; estão presentes no</span>
+<span class="sd">    DataFrame fornecido. Em seguida, realiza um agrupamento dos dados, somando os valores</span>
+<span class="sd">    da coluna &#39;price&#39; para cada método de pagamento. Retorna um novo DataFrame com duas</span>
+<span class="sd">    colunas: &#39;payment_method&#39; e &#39;price&#39;, onde &#39;price&#39; representa a soma total para cada</span>
 <span class="sd">    método de pagamento.</span>
 
 <span class="sd">    Parameters:</span>
@@ -637,7 +721,7 @@ mensagem de erro será exibida e um DataFrame vazio será retornado.</p>
 <span class="sd">        KeyError: Se a coluna &#39;payment_method&#39; ou &#39;price&#39; não estiver presente no DataFrame.</span>
 
 <span class="sd">    Exception:</span>
-<span class="sd">        Se ocorrer qualquer outro erro durante a execução da função. Neste caso, uma </span>
+<span class="sd">        Se ocorrer qualquer outro erro durante a execução da função. Neste caso, uma</span>
 <span class="sd">        mensagem de erro será exibida e um DataFrame vazio será retornado.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">transform_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -668,7 +752,200 @@ mensagem de erro será exibida e um DataFrame vazio será retornado.</p>
             </details>
     </div>
 
-</div>
+</div><h2 id="teste-unitario">Teste unitário</h2>
+<p>Os testes descritos cobrem casos de uso positivo, além de cenários com entradas inválidas e erros esperados, assegurando que a função se comporte conforme o esperado e garanta a estabilidade da pipeline de dados.</p>
+<h3 id="estrutura-dos-testes">Estrutura dos testes</h3>
+<p>Os testes foram implementados utilizando o <code>pytest</code>, uma biblioteca de testes popular no ecossistema Python. Abaixo estão os testes definidos para a função <code>transform_data</code>, localizados no arquivo de testes correspondente.</p>
+<h3 id="testes-implementados">Testes implementados</h3>
+<ol>
+<li><strong>Teste de sucesso (<code>test_transform_data_success</code>)</strong>:<ul>
+<li><strong>Objetivo</strong>: Verificar se a função <code>transform_data</code> consegue agrupar corretamente os dados de entrada válidos, somando os valores da coluna <code>price</code> para cada <code>payment_method</code>.</li>
+<li><strong>Descrição</strong>: Um <code>DataFrame</code> de entrada é passado para a função, contendo métodos de pagamento variados com valores numéricos. O resultado esperado é um novo <code>DataFrame</code> com os métodos de pagamento únicos e a soma correta dos preços.</li>
+<li><strong>Validação</strong>: Usa <code>pd.testing.assert_frame_equal</code> para comparar o <code>DataFrame</code> resultante com o esperado, garantindo a exatidão do agrupamento e da soma dos valores.</li>
+<li><strong>Função de teste</strong>:
+</li>
+</ul>
+</li>
+</ol>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+    <div class="doc doc-contents first">
+
+        <p>Testa a função <code>transform_data</code> com um DataFrame válido, verificando se
+o agrupamento por 'payment_method' é realizado corretamente.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>tests\test_transform.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test_transform_data_success</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Testa a função `transform_data` com um DataFrame válido, verificando se</span>
+<span class="sd">    o agrupamento por &#39;payment_method&#39; é realizado corretamente.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">input_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;payment_method&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Credit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Cash&#39;</span><span class="p">,</span> <span class="s1">&#39;Credit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Debit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Cash&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">,</span> <span class="mf">150.0</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">]</span>
+    <span class="p">})</span>
+
+    <span class="n">expected_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;payment_method&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cash&#39;</span><span class="p">,</span> <span class="s1">&#39;Credit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Debit Card&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">250.0</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">]</span>
+    <span class="p">})</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">transform_data</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+
+    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><ol>
+<li><strong>Teste de colunas ausentes (<code>test_transform_data_missing_columns</code>)</strong>:<ul>
+<li><strong>Objetivo</strong>: Confirmar que a função retorna um <code>DataFrame</code> vazio quando uma das colunas necessárias (<code>payment_method</code> ou <code>price</code>) está ausente no <code>DataFrame</code> de entrada.</li>
+<li><strong>Descrição</strong>: Dois cenários são testados, um em que a coluna <code>payment_method</code> está ausente e outro em que a coluna <code>price</code> está ausente. Em ambos os casos, espera-se que a função retorne um <code>DataFrame</code> vazio, pois esses dados são obrigatórios para o cálculo.</li>
+<li><strong>Validação</strong>: Usa <code>pd.testing.assert_frame_equal</code> para verificar que o resultado é um <code>DataFrame</code> vazio, conforme o esperado.</li>
+<li><strong>Função de teste</strong>:
+</li>
+</ul>
+</li>
+</ol>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+    <div class="doc doc-contents first">
+
+        <p>Testa a função <code>transform_data</code> quando as colunas necessárias estão ausentes,
+esperando que um DataFrame vazio seja retornado.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>tests\test_transform.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test_transform_data_missing_columns</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Testa a função `transform_data` quando as colunas necessárias estão ausentes,</span>
+<span class="sd">    esperando que um DataFrame vazio seja retornado.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">input_data_missing_column</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">]</span>
+    <span class="p">})</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">transform_data</span><span class="p">(</span><span class="n">input_data_missing_column</span><span class="p">)</span>
+    <span class="n">expected_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected_data</span><span class="p">)</span>
+
+    <span class="n">input_data_missing_price</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;payment_method&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Credit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Cash&#39;</span><span class="p">]</span>
+    <span class="p">})</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">transform_data</span><span class="p">(</span><span class="n">input_data_missing_price</span><span class="p">)</span>
+
+    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><ol>
+<li><strong>Teste de exceção genérica (<code>test_transform_data_unexpected_exception</code>)</strong>:<ul>
+<li><strong>Objetivo</strong>: Verificar o tratamento de exceções inesperadas dentro da função <code>transform_data</code>, assegurando que um erro genérico resultará em um <code>DataFrame</code> vazio, sem interromper o fluxo da pipeline.</li>
+<li><strong>Descrição</strong>: Um <code>DataFrame</code> de entrada com valores não numéricos na coluna <code>price</code> é passado para a função, induzindo um erro durante a conversão de tipo. A função deve capturar essa exceção e retornar um <code>DataFrame</code> vazio.</li>
+<li><strong>Validação</strong>: Usa <code>pd.testing.assert_frame_equal</code> para garantir que o <code>DataFrame</code> retornado seja vazio, confirmando o tratamento robusto de erros.</li>
+<li><strong>Função de teste</strong>:
+</li>
+</ul>
+</li>
+</ol>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+    <div class="doc doc-contents first">
+
+        <p>Testa a função <code>transform_data</code> para verificar se uma exceção genérica é tratada
+e um DataFrame vazio é retornado.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>tests\test_transform.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test_transform_data_unexpected_exception</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Testa a função `transform_data` para verificar se uma exceção genérica é tratada</span>
+<span class="sd">    e um DataFrame vazio é retornado.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">input_data_invalid</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;payment_method&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Credit Card&#39;</span><span class="p">,</span> <span class="s1">&#39;Cash&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;invalid_price&#39;</span><span class="p">,</span> <span class="s1">&#39;another_invalid&#39;</span><span class="p">]</span>
+    <span class="p">})</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">transform_data</span><span class="p">(</span><span class="n">input_data_invalid</span><span class="p">)</span>
+    <span class="n">expected_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+    <span class="n">pd</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_frame_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h3 id="consideracoes-finais">Considerações finais</h3>
+<p>Esses testes cobrem os principais cenários que podem ocorrer ao processar dados reais com a função <code>transform_data</code>. A inclusão de verificações para colunas ausentes, tratamento de exceções genéricas e um caso positivo de sucesso proporcionam uma cobertura abrangente para garantir a estabilidade e a confiabilidade da função dentro da pipeline ETL. Esses testes permitem identificar rapidamente problemas em alterações futuras no código, mantendo a qualidade do projeto.</p>
 
 
 
